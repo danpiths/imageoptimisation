@@ -31,7 +31,7 @@ export default function FileUpload(props) {
     const width = await checkImageWidth(e.target.files[0]);
     console.log(width);
     if (width <= 500) {
-      props.setImage(e);
+      props.setImage(e.target.files[0]);
       setSrc(null);
     } else if (e.target.files && e.target.files.length > 0) {
       setCrop(undefined);
