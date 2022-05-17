@@ -1,9 +1,8 @@
 import { useState } from "react";
-import FileUpload from "./FileUpload";
+import UploadFile from "./UploadFile";
 
-export default function Form() {
+export default function Form({ image, setImage, setIsModalOpen, isModalOpen }) {
   const [imageName, setImageName] = useState("");
-  const [image, setImage] = useState("");
 
   return (
     <form
@@ -20,7 +19,11 @@ export default function Form() {
         value={imageName}
         onChange={(e) => setImageName(e.target.value)}
       />
-      <FileUpload setImage={setImage} />
+      <UploadFile
+        setImage={setImage}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
     </form>
   );
 }
